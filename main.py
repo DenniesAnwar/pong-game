@@ -34,11 +34,13 @@ while game_is_on:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce()
 
-    if ball.distance(right_paddle) < 50 and ball.xcor() > 320:
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 320 or ball.distance(left_paddle) < 50 and ball.xcor() < -325:
         ball.rally()
 
-    if ball.distance(left_paddle) < 50 and ball.xcor() < -325:
-        ball.rally()
+    if ball.distance(right_paddle) > 50 and ball.xcor() > 400 or ball.distance(left_paddle) > 50 and ball.xcor() < -405:
+        ball.reset()
+
+
 
 
 
